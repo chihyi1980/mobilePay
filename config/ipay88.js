@@ -1,0 +1,23 @@
+module.exports = 
+{
+    'Sandbox_Webservice_API_URL' : 'https://dvl3.ipay88.com/ePayment/WebService/MHGatewayService/GatewayService.svc',
+    'Sandbox_VOID_API_URL' : 'https://dvl3.ipay88.com/epayment/webservice/voidapi/voidfunction.asmx',
+    'Sandbox_Merchant_ID' : 'M07105',
+    'Sandbox_Merchant_Key' : 'MIjKscvqO7',
+    'Lang' : 'UTF-8',
+    'SignatureType' : 'SHA256',
+    'Production_Webservice_API_URL' : 'https://payment.ipay88.com.my/ePayment/entry.asp',
+    'Production_VOID_API_URL' : 'https://payment.ipay88.com.my/epayment/webservice/voidapi/voidfunction.asmx',
+    'Production_Testing_Merchant_ID' : 'M16292',
+    'Production_Testing_Merchant_Key' : 'V5NBYx6ZeF',
+    'ProdDesc' : ' test ',
+    'UserName' : 'Yallvend',
+    'UserEmail' : 'chihyi1980@gmail.com',
+    'UserContact' : '0935385674',
+    'Remark' : 'test',
+    'ResponseURL' : 'http://116.62.139.42:8085/ipay88/payRes',
+    'BackendURL' : 'http://116.62.139.42:8085/ipay88/payRes',
+    //'Currency' : 'MYR',
+    'Requery_URL': 'https://www.mobile88.com/epayment/enquiry.asp',
+    'VoidRequestTemplete' : '<?xml version="1.0" encoding="utf-8"?> <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><VoidTransaction xmlns="https://www.mobile88.com"><merchantcode>%s</merchantcode><cctransid>%s</cctransid><amount>%s</amount><currency>%s</currency> <signature>%s</signature></VoidTransaction></soap:Body></soap:Envelope>',
+}

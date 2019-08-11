@@ -1,0 +1,21 @@
+doctype html
+html
+body(onload="document.form1.submit()")
+    form(action=ipay88PayURL, method='post', name='form1')
+        input(name='MerchantCode', value=merchantId, type='hidden')
+        input(name='PaymentId', value=paymentId, type='hidden')
+        input(name='RefNo', value=refNo, type='hidden')
+        input(name='Amount', value=amount, type='hidden')
+        input(name='Currency', value=currency, type='hidden')
+        input(name='ProdDesc', value=prodDesc, type='hidden')
+        input(name='UserName', value=userName, type='hidden')
+        input(name='UserEmail', value=userEmail, type='hidden')
+        input(name='UserContact', value=userContact, type='hidden')
+        input(name='Remark', value=remark, type='hidden')
+        input(name='Lang', value=lang, type='hidden')
+        input(name='SignatureType', value=signatureType, type='hidden')
+        input(name='Signature', value=signature, type='hidden')
+        input(name='ResponseURL', value=responseURL, type='hidden')
+        input(name='BackendURL', value=backendURL, type='hidden')
+        
+

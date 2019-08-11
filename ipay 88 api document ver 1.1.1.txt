@@ -1,0 +1,52 @@
+ipay 88 api document ver 1.1.1
+
+1. pay API:
+
+test URL:
+http://116.62.139.42:8085/ipay88/pay/{vid md5}/{paymentId}/{amount}/{currency}
+
+vid md5 : 
+販賣機 id md5
+
+paymentId （支付方式）
+請參考 paymentId 列表，當前測試期間僅支援信用卡，也就是paymentid = 2
+未來開通更多支付方式請洽ipay88團隊
+
+amount （支付金額）
+請注意格式需提供小數點以下兩位，例如20元請寫成 20.00
+當前測試期間僅可支付1.00元以下
+
+currency（貨幣別）
+馬來西亞幣 MYR
+人民幣 CNY
+美金 USD
+
+呼叫API後會跳轉到ipay88網頁完成付款，待流程完成後會回傳結果到我們的response API
+
+
+2. response API:
+
+可能會接收到幾種結果：
+	a. 支付成功
+		會先重新去ipay88 re-query API重新確認一次，確認完成後會再跳轉支付成功頁
+		目前設置為跳轉 https://test.yallvend.com/paymentResult.php?result=success
+	b. 用戶取消支付
+		目前設置為跳轉 https://test.yallvend.com/paymentResult.php?result=fail
+	c. 幾種錯誤訊息
+		請參考錯誤訊息列表，目前暫定都是跳轉 https://test.yallvend.com/paymentResult.php?result=fail
+
+
+3. VOID API:
+
+test URL:
+http://116.62.139.42:8085/ipay88/refund/{orderId}
+
+退款成功則返回 "success", http status 200
+
+退款失敗則返回錯誤代碼，詳細內容請查 VoidFunctionAPI-v1.04.pdf, http status 402
+
+#不過現在官方的說法是online payment 不支援退款，所以也不知道這個有沒有用
+
+
+
+
